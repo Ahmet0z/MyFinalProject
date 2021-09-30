@@ -60,9 +60,9 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(), Messages.ProductsListed);
         }
 
-        public IDataResult<List<Product>> GetAllByCategory(int id)
+        public IDataResult<List<Product>> GetAllByCategory(int categoryId)
         {
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryId == id), Messages.ProductsListed);
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryId == categoryId), Messages.ProductsListed);
         }
 
         //Bu metodun çalışması 5 saniye'yi geçerse haber verir.
@@ -128,5 +128,7 @@ namespace Business.Concrete
         {
             throw new NotImplementedException();
         }
+
+        
     }
 }
